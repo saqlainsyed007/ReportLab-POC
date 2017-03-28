@@ -15,6 +15,7 @@ class BarChart(_DrawingEditorMixin, Drawing):
         self._add(self, Label(), name='title', validate=None, desc=None)
         self.title._text = 'Simple Bar Chart'
         self.title.fontSize = 24
+        self.title.fontName = "Calibri"
         # Position Title
         self.title.x = 386
         self.title.y = 240

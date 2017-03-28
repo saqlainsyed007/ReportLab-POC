@@ -75,6 +75,14 @@ today = datetime.date.today()
     spaceBefore = "15"
     />
 
+    <paraStyle name="title"
+    fontName="Calibri"
+    fontSize="24"
+    spaceBefore = "40"
+    alignment='center'
+    spaceAfter='20'
+    />
+
     <blockTableStyle id="myBlockTableStyle">
         <!-- This sets a font for every cell from the start of the -->
         <!-- second row down to the bottom right hand corner -->
@@ -133,7 +141,7 @@ today = datetime.date.today()
         <param name="chart.data">{{pie_chart_data}}</param>
     </drawing>
 
-    <title>Example 10 - colors and fonts in tables</title>
+    <para style="title"> Simple Table </para>
     <spacer length="1cm"/>
     <blockTable style="myBlockTableStyle"
         rowHeights="3.5cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm"

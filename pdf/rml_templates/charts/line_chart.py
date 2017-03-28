@@ -16,6 +16,7 @@ class LineChart(_DrawingEditorMixin, Drawing):
         self._add(self, Label(), name='title', validate=None, desc=None)
         self.title._text = 'Sample Bar Chart'
         self.title.fontSize = 24
+        self.title.fontName = "Calibri"
         # Position Title.
         self.title.x = 386
         self.title.y = 220
