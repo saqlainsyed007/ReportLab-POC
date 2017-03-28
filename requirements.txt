@@ -1,0 +1,6 @@
+Django==1.8
+ipdb
+
+# You need to have a reportlab.com account and install this manually using your credentials
+# You can sign up at https://www.reportlab.com/accounts/register/
+# pip install rlextra -i https://www.reportlab.com/pypi/
