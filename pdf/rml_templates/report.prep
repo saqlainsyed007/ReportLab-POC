@@ -26,6 +26,7 @@ today = datetime.date.today()
 <template pageSize="(595, 842)" leftMargin="72" showBoundary="0">
 
     <pageTemplate id="blank">
+        <pageGraphics><drawCenteredString x='297.5' y='35'><pageNumber/></drawCenteredString></pageGraphics>
         <frame id="first" x1="5%" y1="5%" width="90%" height="90%"/>
     </pageTemplate>
 
