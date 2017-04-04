@@ -3,10 +3,11 @@ from reportlab.graphics.charts.legends import Legend
 from reportlab.graphics.charts.textlabels import Label
 from reportlab.graphics.shapes import Drawing, _DrawingEditorMixin
 from reportlab.graphics.charts.lineplots import SimpleTimeSeriesPlot
+from reportlab.graphics.widgets.markers import makeMarker
 from reportlab.lib.colors import Color
 
 
-class LineChart(_DrawingEditorMixin, Drawing):
+class SimpleLinePlot(_DrawingEditorMixin, Drawing):
     def __init__(self, width=400, height=200, *args, **kw):
         Drawing.__init__(self, width, height, *args, **kw)
         # Width and height of chart.
@@ -31,11 +32,15 @@ class LineChart(_DrawingEditorMixin, Drawing):
         # Color the lines.
         self.chart.lines[0].strokeColor = Color(.19, .49, 1, 1)
         self.chart.lines[1].strokeColor = Color(.2, .199, .199, 1)
-        # Line thickness
-        self.chart.lines.strokeWidth = 1.5
+        self.chart.lines[0].symbol = makeMarker('FilledCircle')
+        self.chart.lines[0].symbol.size = 10
+        self.chart.lines[1].symbol = makeMarker('Circle')
+        # Hide Lines
+        self.chart.joinedLines = 0
         # Format Labels on X-Axis
         self.chart.xValueAxis.xLabelFormat = '{dd}/{mm}/{yy}'
         # Grid Lines Visible on Graph.
+        self.chart.xValueAxis.visibleGrid = 1
         self.chart.yValueAxis.visibleGrid = 1
         # Format labels on Y-Axis
         self.chart.yValueAxis.labelTextFormat = '%.1f%%'
@@ -51,4 +56,4 @@ class LineChart(_DrawingEditorMixin, Drawing):
 
 
 if __name__ == "__main__":  # NORUNTESTS
-    LineChart().save(formats=['pdf'], outDir='.', fnRoot=None)
+    SimpleLinePlot().save(formats=['pdf'], outDir='.', fnRoot=None)

@@ -15,6 +15,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RML_DIR = os.path.abspath(os.path.join(BASE_DIR, 'pdf', 'rml_templates'))
+RML_STATIC_DIR = os.path.abspath(os.path.join(BASE_DIR, 'static'))
 
 
 # Quick-start development settings - unsuitable for production
