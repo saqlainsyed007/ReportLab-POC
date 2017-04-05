@@ -4,7 +4,7 @@ from reportlab.graphics.charts.textlabels import Label
 from reportlab.graphics.shapes import Drawing, _DrawingEditorMixin
 from reportlab.graphics.charts.lineplots import SimpleTimeSeriesPlot
 from reportlab.graphics.widgets.markers import makeMarker
-from reportlab.lib.colors import Color
+from reportlab.lib.colors import HexColor
 
 
 class SimpleLinePlot(_DrawingEditorMixin, Drawing):
@@ -30,11 +30,27 @@ class SimpleLinePlot(_DrawingEditorMixin, Drawing):
         self.chart.width = 400
         self.chart.height = 150
         # Color the lines.
-        self.chart.lines[0].strokeColor = Color(.19, .49, 1, 1)
-        self.chart.lines[1].strokeColor = Color(.2, .199, .199, 1)
+        self.chart.lines[0].strokeColor = HexColor('#0079c1')
         self.chart.lines[0].symbol = makeMarker('FilledCircle')
         self.chart.lines[0].symbol.size = 10
+        self.chart.lines[1].strokeColor = HexColor('#c41919')
         self.chart.lines[1].symbol = makeMarker('Circle')
+        self.chart.lines[1].symbol.size = 5
+        self.chart.lines[2].strokeColor = HexColor('#ffe207')
+        self.chart.lines[2].symbol = makeMarker('Circle')
+        self.chart.lines[2].symbol.size = 30
+        self.chart.lines[3].strokeColor = HexColor('#07e2ff')
+        self.chart.lines[3].symbol = makeMarker('Circle')
+        self.chart.lines[3].symbol.size = 15
+        self.chart.lines[4].strokeColor = HexColor('#4423af')
+        self.chart.lines[4].symbol = makeMarker('Circle')
+        self.chart.lines[4].symbol.size = 5
+        self.chart.lines[5].strokeColor = HexColor('#26a543')
+        self.chart.lines[5].symbol = makeMarker('Circle')
+        self.chart.lines[5].symbol.size = 20
+        self.chart.lines[6].strokeColor = HexColor('#af22ac')
+        self.chart.lines[6].symbol = makeMarker('Circle')
+        self.chart.lines[6].symbol.size = 12
         # Hide Lines
         self.chart.joinedLines = 0
         # Format Labels on X-Axis
@@ -49,10 +65,19 @@ class SimpleLinePlot(_DrawingEditorMixin, Drawing):
         # Add legends to the graph
         self._add(self, Legend(), name='legend', validate=None, desc=None)
         # Initialize Color vs Desc text
-        self.legend.colorNamePairs = [(Color(.19, .49, 1, 1), 'Data1'), (Color(.2, .199, .199, 1), 'Data2')]
+        self.legend.colorNamePairs = [
+            (HexColor('#0079c1'), 'Data1'),
+            (HexColor('#c41919'), 'Data2'),
+            (HexColor('#ffe207'), 'Data3'),
+            (HexColor('#07e2ff'), 'Data4'),
+            (HexColor('#4423af'), 'Data5'),
+            (HexColor('#26a543'), 'Data6'),
+            (HexColor('#af22ac'), 'Data7'),
+        ]
         # Position Legend
         self.legend.x = 600
-        self.legend.y = 100
+        self.legend.y = 155
+        self.legend.columnMaximum = 7
 
 
 if __name__ == "__main__":  # NORUNTESTS
