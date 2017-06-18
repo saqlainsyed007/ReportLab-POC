@@ -23,6 +23,7 @@ class PieChart(_DrawingEditorMixin, Drawing):
         # Bar Chart Dimensions
         self.chart.width = 150
         self.chart.height = 150
+        self.chart.slices[2].popout = 15
         # Bar Chart Position
         self.chart.x = (self.width - self.chart.width) / 2
         self.chart.y = 20

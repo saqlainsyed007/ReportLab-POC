@@ -53,5 +53,5 @@ def get_bar_chart_data():
 def get_pie_chart_data():
     return {
         'labels': ['label1', 'label2', 'label3', 'label4', 'label5', 'label6'],
-        'data': [12, 32, 28, 64, 43, 225]
+        'data': [32, 47, 64, 33, 28, 200]
     }
