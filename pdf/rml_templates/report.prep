@@ -91,7 +91,7 @@ today = datetime.date.today()
         <!-- second row down to the bottom right hand corner -->
         <blockFont name="Courier-Bold" start="0,1" stop="-1,-1"/>
         <!-- This sets a font for the first row -->
-        <blockFont name="Helvetica-BoldOblique" size="24" start="0,0" stop="3,0"/>
+        <blockFont name="Helvetica-BoldOblique" size="15" start="0,0" stop="3,0"/>
         <!-- This sets a textColor for all the text in the table -->
         <blockTextColor colorName="black"/>
         <!-- This sets a textColor for the first row -->
@@ -156,9 +156,12 @@ today = datetime.date.today()
     <para style="title"> Simple Table </para>
     <spacer length="1cm"/>
     <blockTable style="myBlockTableStyle"
-        rowHeights="3.5cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm"
+        rowHeights="3.5cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm,2cm"
         colWidths="4cm,4cm,4cm,4cm"
         repeatRows="1">
+        <tr>
+            <td>Col Heading 1</td><td>Col Heading 2</td><td>Col Heading 3</td><td>Col Heading 4</td>
+        </tr>
         {{ for i in range(21)}}
             <tr>
                 <td>Cell 0,{{i}}</td><td>Cell 1,{{i}}</td><td>Cell 2,{{i}}</td><td>Cell 3,{{i}}</td>
